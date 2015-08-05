@@ -180,3 +180,28 @@ extends java.lang.Number
 
 
 
+//使用getName()得到该对象所属的类以及包
+
+package zyh;
+
+import org.omg.CORBA.PUBLIC_MEMBER;
+
+class Demo{
+    //other codes..	
+}
+
+public class hello {
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+       Demo demo = new Demo();
+       System.out.println(demo.getClass().getName() );
+	}
+}
+
+Result:
+zyh.Demo
+
+
