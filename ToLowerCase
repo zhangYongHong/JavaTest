@@ -11,6 +11,7 @@ public class ToLowercase {
       //String str = "RoLLENHOLT";
        Scanner in = new Scanner(System.in);
        String str = in.next();
+       
        ByteArrayInputStream input = new ByteArrayInputStream(str.getBytes());
        ByteArrayOutputStream output  = new ByteArrayOutputStream();
        int temp = 0;
@@ -24,3 +25,8 @@ public class ToLowercase {
         System.out.println(outStr);
 	}
 }
+
+result:
+        TEST 
+        test
+
