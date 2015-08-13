@@ -1,4 +1,7 @@
+
 拓展Thread类，实现多线程，但是此种方法不适合资源共享，注意下例中的count.
+
+
 code：
 
 public class hello extends Thread{
