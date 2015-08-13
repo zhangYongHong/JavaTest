@@ -1,0 +1,38 @@
+拓展Thread类，实现多线程，但是此种方法不适合资源共享，注意下例中的count.
+code：
+
+public class hello extends Thread{
+     public hello(String name){
+           this.name = name;
+     }
+     public void run(){
+           for(int i=0; i<5; i++){
+                 System.out.println (name+"  count  ： " + count-- );
+           }
+     }
+     
+     public static void main(String[] args){
+           Thread t1 = new hello("AA进程——");
+           Thread t2=new hello("BB进程——" );
+           t2.start();
+           t1.start();
+     }
+     private String name;
+     private int count=5;
+}
+
+result：
+AA进程——  count  ： 5
+BB进程——  count  ： 5
+AA进程——  count  ： 4
+BB进程——  count  ： 4
+BB进程——  count  ： 3
+BB进程——  count  ： 2
+BB进程——  count  ： 1
+AA进程——  count  ： 3
+AA进程——  count  ： 2
+AA进程——  count  ： 1
+
+看结果可以知道，类继承Thread不适合资源共享的功能，比如买票，系统应该实时反映当前票数（假设现在有10张票），不能够AA买完一张票后，BB买时票数还是10.
+
+如果想要实现资源的共享，可以利用Runable接口.
