@@ -1,2 +1,2 @@
 git is cool!
-
+git is simple! I guess.

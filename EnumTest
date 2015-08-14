@@ -29,3 +29,13 @@ enum Size
     private String abbreviation;     
 }
 
+<<<<<<< HEAD
+=======
+
+Result:
+Enter a  size: (SMALL, MEDIUM, LARGE, EXTRA_LARGE) 
+SMALL
+size=SMALL
+abbreviation = S
+
+>>>>>>> 476af50a180fb67ef1fab84eca2198b5b4bfac6b

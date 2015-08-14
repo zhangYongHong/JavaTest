@@ -28,4 +28,7 @@ public class TestFile {
 	     System.out.println("there are" + count + "file in //root");
      }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 476af50a180fb67ef1fab84eca2198b5b4bfac6b

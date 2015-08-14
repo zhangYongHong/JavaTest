@@ -61,6 +61,8 @@ public class test {
 	}
 }
 
+----------------------------------------------------------------
+打印本月日历
 
 mport java.text.DateFormatSymbols;
 import java.util.*;
