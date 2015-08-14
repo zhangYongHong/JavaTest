@@ -1,0 +1,33 @@
+ /× 买票系统可以使用这个方法，当有多个线程抢占资源时可以使用synchronized锁，保证其中一个线执行完毕后，下一个线程才可以被执行.
+ /× 在买票中，需要实时反应票数，即执行下一个线程需要用到上一个线程的执行结果，保证每一个人买一张票后，整体数量要减1.
+
+public class hello implements Runnable {
+    public void run() {
+        synchronized (this) {
+       
+            for (int i = 0; i < 5; i++) {
+                System.out.println(Thread.currentThread().getName() + " synchronized loop " + count--);
+            }
+        }
+    }
+    public static void main(String[] args) {
+        hello t1 = new hello();
+        Thread ta = new Thread(t1, "A");
+        Thread tb = new Thread(t1, "B");
+        ta.start();
+        tb.start();
+    }
+ 	private int count=10;
+}
+
+result:
+A synchronized loop 10
+A synchronized loop 9
+A synchronized loop 8
+A synchronized loop 7
+A synchronized loop 6
+B synchronized loop 5
+B synchronized loop 4
+B synchronized loop 3
+B synchronized loop 2
+B synchronized loop 1
